@@ -3,17 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <title>HTML5サンプル</title>
+<script>
+    function disp_edit(){
+        document.getElementById('view01').style.display="none";
+        document.getElementById('edit01').style.display="block";
+    }
+</script>
 </head>
 <body>
 <!-- No01 -->
 <div style="width:100%;background-color:midnightblue;color:white;">
 2012/08/17(Sun)
 </div>
-<div style="width:100%;background-color:lemonchiffon;">
+<div id="view01" style="width:100%;background-color:lemonchiffon;" onclick="disp_edit()">
   <br>
 　今日は、荒川にてサイクリング<br>
 　行きの時は、追い風<br>
 　帰りは、向かい風<br>
+  <br>
+</div>
+<div id="edit01" style="width:100%;background-color:lemonchiffon;display:none;" 
+
+onclick="disp_edit()">
+  <br>
+      <textarea name="Text1" cols="40" rows="5">今日は、荒川にてサイクリング<br>行きの時は、
+
+追い風<br>帰りは、向かい風<br>
+      </textarea>
   <br>
 </div>
 <br>
