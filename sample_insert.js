@@ -1,4 +1,4 @@
-var mongodb = require('mongodb');
+﻿var mongodb = require('mongodb');
 var server = new mongodb.Server('localhost',27017);
 var db = new mongodb.Db('sampledb', server, {safe: true});
 db.open(function (err, db) {
@@ -16,4 +16,5 @@ db.open(function (err, db) {
         }
         console.log('insert success');
     });
+    return;
 });

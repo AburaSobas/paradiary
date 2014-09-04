@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
+<script src="./script/sample.js"></script>
 <title>HTML5サンプル</title>
 <script>
     function disp_edit(){
@@ -17,7 +18,11 @@
 8月30日
 </div>
 <!-- 1段目 -->
-<div class="header_day">2012<img src="./image/save.jpg" alt=""></div>
+<div class="header_day">
+    2012
+    <img src="./image/save.jpg" alt="edit" onclick="">
+    <img src="./image/save.jpg" alt="save" onclick="">
+</div>
 <div id="view01" style="width:100%;background-color:lemonchiffon;" onclick="disp_edit()">
   <br>
 　今日は、荒川にてサイクリング<br>
@@ -25,15 +30,8 @@
 　帰りは、向かい風<br>
   <br>
 </div>
-<div id="edit01" style="width:100%;background-color:lemonchiffon;display:none;" 
-
-onclick="disp_edit()">
-  <br>
-      <textarea name="Text1" cols="40" rows="5">今日は、荒川にてサイクリング<br>行きの時は、
-
-追い風<br>帰りは、向かい風<br>
-      </textarea>
-  <br>
+<div class="day_edit" onclick="disp_edit()">
+    <textarea name="Text1" cols="40" rows="5"></textarea>
 </div>
 <br>
 <!-- No02 -->

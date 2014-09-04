@@ -1,6 +1,7 @@
 ﻿body {
  font-family: 'メイリオ';
 }
+
 .header {
     height: 50px;
     background-size: 25%;
@@ -17,6 +18,14 @@
     cursor: pointer;
     margin: 0 0 0 50px;
     vertical-align: top;
-    
-    
+}
+
+.day_edit {
+    background-color:lemonchiffon;
+    display:none;
+    width: 100%;
+}
+
+.day_edit textarea {
+    width: 100%
 }
