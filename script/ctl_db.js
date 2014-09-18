@@ -1,4 +1,4 @@
-var mongodb = require('mongodb');
+var mongodb = require('mongodb')
 var server = new mongodb.Server('localhost', 27017);
 var db = new mongodb('paradiarydb', server, {safe: true});
 
@@ -13,7 +13,7 @@ var collection = db.collection('diary_item');
 
 function insertDiary(_date, _contents){
     var new_diary = {
-        diary_date: _date,
+        diary_date; _date,
         diary_contents: _contents
     };
     collection.insert(new_diary, function (err, result) {
