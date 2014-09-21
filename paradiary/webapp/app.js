@@ -17,6 +17,8 @@ var
 app.configure( function () {
   app.use( express.bodyParser() );
   app.use( express.methodOverride() );
+  app.use( express.static( __dirname + '/public' ));
+  app.use( app.router );
 });
 
 
@@ -34,7 +36,7 @@ app.configure( 'production', function () {
 });
 
 app.get('/', function(request, response){
-  response.send('Hello Express');
+  response.redirect( '/paradiary.html' );
 });
 
 server.listen(3000);
