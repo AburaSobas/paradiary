@@ -10,10 +10,9 @@
 var 
   http = require('http'),
   express = require('express'),
-  routes = require('./routes'),
+  
   app = express(),
   server = http.createServer(app);
-
 
 app.configure( function () {
   app.use( express.bodyParser() );
@@ -36,7 +35,9 @@ app.configure( 'production', function () {
   app.use( express.errorHandler() );
 });
 
-routes.configRoutes( app, server );
+app.get('/', function(request, response){
+  response.redirect( '/paradiary.html' );
+});
 
 server.listen(3000);
 console.log (
