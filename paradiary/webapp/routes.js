@@ -34,5 +34,25 @@ configRoutes = function ( app, server ) {
   app.get( '/', function ( request, response ) {
     response.redirect( '/paradiary.html' );
   });
+  
+  app.all( '/:obj_type/*?', function ( request, response, next ) {
+    response.charset = 'utf-8';
+    response.contentType ( 'json' );
+    next();
+  });
+  
+  app.get( '/:obj_type/list', function ( request, response ) {
+    dbHandle.collection(
+      request.params.obj_type,
+      function ( outer_error, collection ) {
+        collection.find().toArray(
+          function ( inner_error, map_list ) {
+            response.send( map_list );
+          }
+        );
+      }
+    );
+  });
+  
 };
 module.exports = { configRoutes : configRoutes };
