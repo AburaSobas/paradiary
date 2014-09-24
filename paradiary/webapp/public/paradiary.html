@@ -3,8 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>paradiary</title>
+  <script src="js/jq/jquery-1.11.1.js"></script>
+  <script>
+    $.ajax({
+      type: 'GET',
+      url: 'http://localhost:3000/diary/list',
+      dataType: 'json',
+      success: function(data){
+        var len = data.length;
+        //for(var i=0; i < len; i++){
+        //  $("#b").append(json[i].version + ' ' + json[i].codename + '<br>');
+        //}
+        for(var i=0; i < len; i++){
+          $("#test2").text(data[i].contents);
+        }
+        alert("ok");
+      }
+    });
+  </script>
 </head>
 <body>
-  あいうえお
+  <div id="test1">データベースの内容を表示</div>
+  <div id="test2"></div>
 </body>
 </html>
