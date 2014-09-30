@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>paradiary</title>
+  <script src="js/jq/jquery-1.11.1.js"></script>
+  <script>
+    jQuery(document).ready( function() {
+      $("#btn_upd").click(function() {
+        var hostUrl= 'http://localhost:3000/diary/create';
+        var param1 = $("#txt_date").val();
+        var param2 = $("#txt_contents").val();
+        alert(param1);
+        alert(param2);
+        $.ajax({
+          url: hostUrl,
+          type:'POST',
+          dataType: 'json',
+          data : {write_date : param1, contents : param2 },
+          timeout:10000,
+          success: function(data) {
+            alert("ok");
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown) {
+            alert("error");
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <input id="btn_upd" type="button" value="更新" /><br>
+  <input id="txt_date" type="text" /><br>
+  <textarea id="txt_contents" cols=100 rows=3></textarea>
+</body>
+</html>

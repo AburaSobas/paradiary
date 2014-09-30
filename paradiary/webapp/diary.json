@@ -1,0 +1,13 @@
+{ "type" : "object",
+  "additionalProperties" : false,
+  "properties" : {
+    "date" : {
+      "type"   : "date"
+    },
+    "contents" : {
+      "type"      : "string",
+      "minLength" : 1,
+      "maxLength" : 500
+    }
+  }
+}

@@ -11,9 +11,6 @@
       dataType: 'json',
       success: function(data){
         var len = data.length;
-        //for(var i=0; i < len; i++){
-        //  $("#b").append(json[i].version + ' ' + json[i].codename + '<br>');
-        //}
         for(var i=0; i < len; i++){
           $("#test2").text(data[i].contents);
         }
