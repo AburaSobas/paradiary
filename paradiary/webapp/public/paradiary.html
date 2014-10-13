@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>paradiary</title>
+  <link rel="stylesheet" href="css/paradiary.css" type="text/css"/>
   <script src="js/jq/jquery-1.11.1.js"></script>
   <script>
+    
+/*
     $.ajax({
       type: 'GET',
       url: 'http://localhost:3000/diary/list',
@@ -17,10 +20,40 @@
         alert("ok");
       }
     });
+*/
   </script>
 </head>
 <body>
+<!--
+  <div class="control">前年へ</div>
+  <div class="control">前日へ</div>
+  <div class="control">翌日へ</div>
+  <div class="control">翌年へ</div>
+-->
+  <div class="day">
+    2014年10月2日<br>
+    <div class="day_show">
+    </div>
+    <div class="day_command">
+      <button id="edit1">編集</button>
+      <button type="button">保存</button>
+      <button type="button">削除</button>
+    </div>
+  </div>
+  <div class="day">
+    2015年10月2日<br>
+  </div>
+  <div class="day">2016年10月2日</div>
   <div id="test1">データベースの内容を表示</div>
   <div id="test2"></div>
+  </div>
+  <script>
+    $('#edit1').click(function() {
+      alert('clickイベントが発生しました。');
+    });
+    $("button").click(function(){
+      alert("button .click() のイベントだよぉ〜！");
+    });
+  </script>
 </body>
 </html>
